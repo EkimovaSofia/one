@@ -1,0 +1,9 @@
+USE EA
+GO
+CREATE TRIGGER SOTR_INSERT
+ON sotrudn
+AFTER INSERT 
+AS
+INSERT INTO ismeneniya (FIO, ISMENEN)
+SELECT Id, 'ƒ¿ÕÕ€≈ »«Ã≈Õ≈Õ€' + FIO  +'‰‡Ú‡' + ZP
+FROM INSERTED
